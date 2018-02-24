@@ -56,3 +56,9 @@ button:hover {
 #newCol {
   border: none;
 }
+#youWin{
+  margin-top: 500px;
+}
+#youWin h1{
+  background-color: white;
+}

@@ -11,14 +11,17 @@ var hardBtn = document.querySelector('#hardBtn');
 var selected = document.querySelector('.selected');
 var hardSquares = document.getElementsByClassName('hardSquare');
 var difficulty = document.getElementsByClassName('difficulty');
+var youWin = document.querySelector("#youWin");
 
 colorToGuessDisplay.textContent = colorToGuess;
+youWin.style.display = "none";
 
 for (var i = 0; i < colors.length; i++){
  squares[i].style.backgroundColor = colors[i];
  squares[i].addEventListener('click', function(){
    var clickedColor = this.style.backgroundColor;
    if (clickedColor === colorToGuess){
+    youWin.style.display = "block";
     changeColor(clickedColor);
     h1.style.backgroundColor = colorToGuess;
     selected = document.querySelector('.selected');
@@ -52,6 +55,7 @@ hardBtn.addEventListener('click', function(){
 });
 
 function reset(){
+  youWin.style.display = "none";
   h1.style.backgroundColor = "#87ceeb";
   colors = genereteRandomColors(squareNum);
   colorToGuess = pickColor(squareNum);
